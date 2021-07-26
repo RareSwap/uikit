@@ -2367,7 +2367,7 @@ var socials = [
         items: [
             {
                 label: "English",
-                href: "https://t.me/RareSwapChat",
+                href: "https://t.me/rareswapfinance",
             },
             {
                 label: "Announcements",
@@ -2492,7 +2492,9 @@ var templateObject_1$E;
 var PriceLink = styled__default['default'].a(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
 var CakePrice = function (_a) {
     var cakePriceUsd = _a.cakePriceUsd;
-    return cakePriceUsd ? (React__default['default'].createElement(PriceLink, { href: "https://dex.guru/token/0x1330f74978CE65dE6871f695Eed99A35dD21174c-bsc", target: "_blank" },
+    return cakePriceUsd ? (
+    // <PriceLink href="https://dex.guru/token/0xfe6d93b42aD9a60d84b200d6706C49a893a1D5Ee-bsc" target="_blank">
+    React__default['default'].createElement(PriceLink, null,
         React__default['default'].createElement(Icon$x, { width: "24px", mr: "8px" }),
         React__default['default'].createElement(Text, { color: "textSubtle", bold: true }, "$" + cakePriceUsd.toFixed(3)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 }));
 };
@@ -2500,20 +2502,8 @@ var CakePrice$1 = React__default['default'].memo(CakePrice);
 var templateObject_1$F;
 
 var Icons$1 = IconModule;
-var MoonIcon = Icons$1.MoonIcon, SunIcon = Icons$1.SunIcon;
-var ThemeSwitcher = function (_a) {
-    var isDark = _a.isDark, toggleTheme = _a.toggleTheme;
-    return (React__default['default'].createElement(Button, { variant: "text", onClick: function () { return toggleTheme(!isDark); } },
-        React__default['default'].createElement(Flex, { alignItems: "center" },
-            React__default['default'].createElement(SunIcon, { color: isDark ? "textDisabled" : "text", width: "24px" }),
-            React__default['default'].createElement(Text, { color: "textDisabled", mx: "4px" }, "/"),
-            React__default['default'].createElement(MoonIcon, { color: isDark ? "text" : "textDisabled", width: "24px" }))));
-};
-var ThemeSwitcher$1 = React__default['default'].memo(ThemeSwitcher, function (prev, next) { return prev.isDark === next.isDark; });
-
-var Icons$2 = IconModule;
 var SocialLinks = function () { return (React__default['default'].createElement(Flex, null, socials.map(function (social, index) {
-    var Icon = Icons$2[social.icon];
+    var Icon = Icons$1[social.icon];
     var iconProps = { width: "24px", color: "textSubtle", style: { cursor: "pointer" } };
     var mr = index < socials.length - 1 ? "24px" : 0;
     if (social.items) {
@@ -2524,8 +2514,8 @@ var SocialLinks = function () { return (React__default['default'].createElement(
 }))); };
 var SocialLinks$1 = React__default['default'].memo(SocialLinks, function () { return true; });
 
-var Icons$3 = IconModule;
-var LanguageIcon = Icons$3.LanguageIcon;
+var Icons$2 = IconModule;
+var LanguageIcon = Icons$2.LanguageIcon;
 var LangSelector = function (_a) {
     var currentLang = _a.currentLang, langs = _a.langs, setLang = _a.setLang;
     return (React__default['default'].createElement(Dropdown, { position: "top-right", target: React__default['default'].createElement(Button, { variant: "text", startIcon: React__default['default'].createElement(LanguageIcon, { color: "textSubtle", width: "24px" }) },
@@ -2539,10 +2529,10 @@ var Container$4 = styled__default['default'].div(templateObject_1$G || (template
     var theme = _a.theme;
     return theme.nav.background;
 });
-var SettingsEntry = styled__default['default'].div(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 8px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 8px;\n"])), MENU_ENTRY_HEIGHT);
+var SettingsEntry = styled__default['default'].div(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: ", "px;\n  padding: 0 8px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: ", "px;\n  padding: 0 8px;\n"])), MENU_ENTRY_HEIGHT);
 var SocialEntry = styled__default['default'].div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"])), MENU_ENTRY_HEIGHT);
 var PanelFooter = function (_a) {
-    var isPushed = _a.isPushed, pushNav = _a.pushNav, toggleTheme = _a.toggleTheme, isDark = _a.isDark, cakePriceUsd = _a.cakePriceUsd, currentLang = _a.currentLang, langs = _a.langs, setLang = _a.setLang;
+    var isPushed = _a.isPushed, pushNav = _a.pushNav; _a.toggleTheme; _a.isDark; var cakePriceUsd = _a.cakePriceUsd, currentLang = _a.currentLang, langs = _a.langs, setLang = _a.setLang;
     if (!isPushed) {
         return (React__default['default'].createElement(Container$4, null,
             React__default['default'].createElement(IconButton, { variant: "text", onClick: function () { return pushNav(true); } },
@@ -2553,7 +2543,6 @@ var PanelFooter = function (_a) {
             React__default['default'].createElement(CakePrice$1, { cakePriceUsd: cakePriceUsd }),
             React__default['default'].createElement(SocialLinks$1, null)),
         React__default['default'].createElement(SettingsEntry, null,
-            React__default['default'].createElement(ThemeSwitcher$1, { isDark: isDark, toggleTheme: toggleTheme }),
             React__default['default'].createElement(LangSelector$1, { currentLang: currentLang, langs: langs, setLang: setLang }))));
 };
 var templateObject_1$G, templateObject_2$e, templateObject_3$7;
@@ -2983,7 +2972,7 @@ var brandColors = {
 var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#ffffff", secondary: "#16256b", backgroundDisabled: "#E9EAEB", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#eeeaf4", inputSecondary: "#d7caec", tertiary: "#EFF4F5", text: "#487CFF", textDisabled: "#BDC2C4", textSubtle: "#16256b", borderColor: "#E9EAEB", card: "#FFFFFF", nav: "#16256b", gradients: {
         bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
     } });
-var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { primary: "#50D6FF", secondary: "#50D6FF", background: "#1f2a5c", backgroundDisabled: "#424037", contrast: "#FFFFFF", invertedContrast: "#262513", input: "#483F5A", inputSecondary: "#8d8857", primaryDark: "#8f8104", tertiary: "#28444A", text: "#fcfae2", textDisabled: "#717161", textSubtle: "#50D6FF", borderColor: "#61634b", card: "#131a42", nav: "#131a42", gradients: {
+var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { primary: "#D7B576", secondary: "#D7B576", background: "#2A2829", backgroundDisabled: "#424037", contrast: "#FFFFFF", invertedContrast: "#262513", input: "#483F5A", inputSecondary: "#8d8857", primaryDark: "#8f8104", tertiary: "#28444A", text: "#fcfae2", textDisabled: "#717161", textSubtle: "#D7B576", borderColor: "#61634b", card: "#171813", nav: "#171813", gradients: {
         bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
     } });
 

@@ -132,7 +132,7 @@ export const socials = [
     items: [
       {
         label: "English",
-        href: "https://t.me/RareSwapChat",
+        href: "https://t.me/rareswapfinance",
       },
       {
         label: "Announcements",
